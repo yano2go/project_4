@@ -4,7 +4,7 @@ export default class beerlistitem extends Component {
      render() {
           return (
                <div>
-                   `${JSON.stringify(beers)}`
+                   `${JSON.stringify(beerData)}`
                </div>
           )
      }

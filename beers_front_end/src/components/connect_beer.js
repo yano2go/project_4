@@ -1,1 +1,0 @@
-const beerlist = {name: '', style: '', brand: '', flavor: '', abv:''} 
