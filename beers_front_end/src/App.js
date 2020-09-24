@@ -64,5 +64,15 @@ return (
     </div>
   );
 }
-
+const handleSubmit  = async (event) =>{
+  event.preventDefault()
+    const response = await fetch('http://localhost:3000/beers', {
+      body: JSON.stringify(formInputs),
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+  }
 export default App;
