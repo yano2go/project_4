@@ -1,10 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from "react";
 
 function App() {
-  return (
+const url = 'http://localhost:3000/beers'
+const [data, setData] = useState([]);
+useEffect(() => {
+  // if (!query) return;
+
+  const fetchData = async () => {
+    
+    const response = await fetch(url, { method: "get" });
+    const data = await response.json();
+    setData(data);
+    
+  };
+
+  fetchData();
+}, [url]);
+  
+return (
     <div className="beerform">
+      `${JSON.stringify(data)}`
       <h4>Post your favorite beer</h4>
     <form>
       <label htmlFor="brand">brand</label>
